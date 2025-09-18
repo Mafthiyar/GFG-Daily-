@@ -1,0 +1,21 @@
+import java.util.*;
+
+class dectobinary {
+    static String decToBinary(int n) {
+
+        String sb = "";
+
+        while (n > 0) {
+            int bit = n % 2;
+            sb = bit + sb;
+            n = n / 2;
+        }
+
+        return sb;
+    }
+
+    public static void main(String[] args) {
+        int n = 12;
+        System.out.println(decToBinary(n));
+    }
+}
