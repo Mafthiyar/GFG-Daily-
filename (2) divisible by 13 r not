@@ -1,0 +1,20 @@
+import java.util.*;
+class Solution {
+    static boolean divby13(String s) {
+        // code here
+        int a = Integer.parseInt(s);
+        return (a % 13 == 0);
+    }
+    public static void main (String[] args){
+        Scanner sc = new Scanner (System.in);
+        String s = sc.nextLine();
+
+        boolean k  = divby13(s);
+
+        if (k) {
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+    }
+}
