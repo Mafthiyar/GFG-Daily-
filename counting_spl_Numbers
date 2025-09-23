@@ -1,0 +1,36 @@
+import java.util.*;
+class Solution {
+    public static int countspecialNum(int[] arr) {
+        // code here
+        int count = 0;
+
+
+        for (int i = 0; i < arr.length; i++) {
+            boolean spl = false;
+            for (int j = 0; j < arr.length; j++) {
+                if (i != j && arr[j] != 0 && arr[i] % arr[j] == 0)
+                    spl = true;
+                break;
+            }
+            if (spl) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println(countspecialNum(arr));
+
+    }
+
+}
+
