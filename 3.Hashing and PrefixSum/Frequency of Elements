@@ -1,0 +1,41 @@
+import java.util.*;
+class Solution {
+    public static ArrayList<ArrayList<Integer>> countFreq(int[] arr) {
+        // code here
+        HashMap <Integer,Integer> map = new HashMap<>();
+        
+        for(int i=0; i<arr.length; i++){
+            int num = arr[i];
+            if(map.containsKey(num)){
+                map.put(num, map.get(num) + 1);
+            }else{
+                map.put(num,1);
+            }
+        }
+        
+        
+        ArrayList <ArrayList<Integer>> result = new ArrayList<>();
+        
+        for(int key : map.keySet()){
+            ArrayList<Integer> pair = new ArrayList<>();
+            pair.add(key);
+            pair.add(map.get(key));
+            result.add(pair);
+        }
+        
+        return result;
+        
+    }
+    public static void main (String[] args){
+        Scanner sc = new Scanner (System.in);
+        int n = sc.nextInt();
+        
+        int arr[] = new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        countFreq(arr);
+    }
+}
