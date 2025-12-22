@@ -2,25 +2,25 @@ import java.util.*;
 class Solution {
     public static ArrayList<ArrayList<Integer>> countFreq(int[] arr) {
         // code here
-        HashMap <Integer,Integer> map = new HashMap<>();
+        HashMap <Integer,Integer> map = new HashMap<>(); // for frequencies (hash)
         
         for(int i=0; i<arr.length; i++){
             int num = arr[i];
             if(map.containsKey(num)){
-                map.put(num, map.get(num) + 1);
+                map.put(num, map.get(num) + 1); //increase if number comes again
             }else{
-                map.put(num,1);
+                map.put(num,1); //recording number first time
             }
         }
         
         
-        ArrayList <ArrayList<Integer>> result = new ArrayList<>();
+        ArrayList <ArrayList<Integer>> result = new ArrayList<>(); // because it stores as [ [],[],[] ] inner and outer in ArrayList<Arraylist<Integer>>
         
-        for(int key : map.keySet()){
-            ArrayList<Integer> pair = new ArrayList<>();
-            pair.add(key);
-            pair.add(map.get(key));
-            result.add(pair);
+        for(int key : map.keySet()){ // keySet : to store keys, if keys are stored frequencies comes along with it.
+            ArrayList<Integer> pair = new ArrayList<>(); store key and frequency in pair
+            pair.add(key); // bring key
+            pair.add(map.get(key)); // bring key frequency
+            result.add(pair); // store in result
         }
         
         return result;
